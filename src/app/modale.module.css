@@ -1,18 +1,24 @@
 .modale {
   --modale-margin: 10px;
   --modale-max-width: 1100px;
+  --modale-max-height: 700px;
   --modale-background-rgb: #b0d2fc;
 
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: var(--border-radius);
   background-color: var(--modale-background-rgb);
   width: calc(100% - 2 * var(--modale-margin));
   max-width: var(--modale-max-width);
+  height: calc(100% - 2 * var(--modale-margin));
+  max-height: var(--modale-max-height);
   margin: var(--modale-margin);
 }
 
 .header {
   --modale-header-background-rgb: #7193bb;
+  --modale-header-height: 40px;
 
   display: flex;
   align-items: center;
@@ -32,5 +38,14 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   padding: 20px 10px;
+  height: calc(100% - var(--modale-header-height));
+}
+
+@media screen and (max-height: 650px) {
+  .content {
+    flex-direction: row;
+  }
 }

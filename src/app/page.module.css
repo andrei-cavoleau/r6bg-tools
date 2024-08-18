@@ -1,7 +1,7 @@
 .form {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .diceInput {
@@ -67,7 +67,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 500px;
-  word-wrap: break-word;
+  flex-grow: 1;
+}
+
+@media screen and (max-height: 650px) {
+  .form {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .diceInput {
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }
