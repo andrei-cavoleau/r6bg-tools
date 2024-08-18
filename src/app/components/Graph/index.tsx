@@ -69,18 +69,23 @@ const getChartData = (
 
   const labels = [];
   const data = [];
+  let probabilityLeft = 1;
 
   for (let i = 0; i <= highestDamage; i++) {
     labels.push(i);
-    data.push(getDamageData(probabilities, i));
+    const probability = getDamageProbability(probabilities, i);
+    probabilityLeft -= probability;
+    data.push(probabilityLeft);
   }
+
+  const dataAsPercent = data.map((data) => Math.round(data * 100));
 
   return {
     labels,
     datasets: [
       {
         label: "Damage percent chances",
-        data,
+        data: dataAsPercent,
         backgroundColor: "white",
         borderColor: "#0883ff",
         borderWidth: 2,
@@ -93,8 +98,8 @@ const getChartData = (
 const getHighestDamage = (probabilities: Probabilities): number =>
   Math.max(...Object.keys(probabilities).map((damage) => +damage));
 
-const getDamageData = (probabilities: Probabilities, damage: number) =>
-  probabilities[damage] ? Math.floor(probabilities[damage] * 100) : 0;
+const getDamageProbability = (probabilities: Probabilities, damage: number) =>
+  probabilities[damage] || 0;
 
 const getChartPlugins = () => [
   {
