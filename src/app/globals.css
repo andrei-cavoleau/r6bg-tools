@@ -1,0 +1,34 @@
+:root {
+  --border-radius: 12px;
+  --background-start-rgb: #010811;
+  --background-end-rgb: #021833;
+  --content-rgb: #333;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--content-rgb));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(
+    45deg,
+    var(--background-start-rgb),
+    var(--background-end-rgb)
+  );
+}
