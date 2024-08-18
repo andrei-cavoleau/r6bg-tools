@@ -26,7 +26,7 @@ export default function Graph() {
   );
 }
 
-const getChartOptions = (): ChartOptions => ({
+const getChartOptions = (): any => ({
   responsive: true,
   plugins: {
     title: {
