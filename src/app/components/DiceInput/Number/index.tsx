@@ -15,6 +15,7 @@ export default function DiceInputNumber(props: DiceInputNumberProps) {
     <div className={styles.diceInputNumber}>
       <button className={styles.increment} onClick={() => onIncrementClick(-1)}>
         <Image
+          className={styles.incrementImage}
           src="/minus.svg"
           alt={"decrement"}
           width={25}
@@ -25,6 +26,7 @@ export default function DiceInputNumber(props: DiceInputNumberProps) {
       <span className={styles.number}>{value}</span>
       <button className={styles.increment} onClick={() => onIncrementClick(1)}>
         <Image
+          className={styles.incrementImage}
           src="/plus.svg"
           alt={"increment"}
           width={25}

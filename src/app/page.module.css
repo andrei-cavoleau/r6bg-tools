@@ -36,6 +36,7 @@
 .increment {
   --action-rgb: #0883ff;
 
+  display: flex;
   border: none;
   background-color: var(--action-rgb);
   width: 25px;
@@ -81,5 +82,37 @@
   .diceInput {
     align-items: center;
     margin-bottom: 20px;
+  }
+
+  .graph {
+    max-width: calc(100% - 330px);
+    max-height: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-height: 390px) {
+  .diceInput {
+    margin-bottom: 5px;
+  }
+
+  .dice {
+    width: 25px;
+    height: 25px;
+  }
+
+  .increment {
+    width: 15px;
+    height: 15px;
+  }
+
+  .incrementImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .number {
+    font-size: 13px;
   }
 }
