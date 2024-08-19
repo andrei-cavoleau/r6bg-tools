@@ -57,6 +57,7 @@ const getChartOptions = (): any => ({
       ticks: {
         callback: (value: number) => `${value}%`,
       },
+      min: 0,
     },
   },
 });
@@ -73,9 +74,9 @@ const getChartData = (
 
   for (let i = 0; i <= highestDamage; i++) {
     labels.push(i);
+    data.push(probabilityLeft);
     const probability = getDamageProbability(probabilities, i);
     probabilityLeft -= probability;
-    data.push(probabilityLeft);
   }
 
   const dataAsPercent = data.map((data) => Math.round(data * 100));
